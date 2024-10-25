@@ -1,0 +1,56 @@
+
+<%-include("navbar.ejs")%>
+
+<div class="container-fluid mt-5 bg-white">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <h3>user appointment</h3>
+            <table class="table table-bordered table-sm table-striped mt-4">
+            <tr>
+                <th>ACTION</th>
+                <th>SN</th>
+                <TH>User First_Name</TH>
+                <TH>User Last_Name</TH>
+                <th>User Email</th>
+                <th>User Phone</th>
+                <th>User Subject</th>
+
+                <th>User Message</th>
+
+            </tr>
+            <%
+            for(i=0;i<user_appointment.length;i++)
+            {
+                %>
+                 <tr>
+                    <td class="text-center">
+                       
+                        <a href="/admin/delete_user_appointment/<%=user_appointment[i]._id%>" onclick="return confirm('Are You Sure...')">
+                            <button class="btn btn-warning p-0 pe-2 ps-2 mt-1">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%=i+1%></td>
+                    
+                    <td><%=user_appointment[i].first_name%></td>
+                    <td><%=user_appointment[i].last_name%></td>
+                    <td><%=user_appointment[i].email%></td>
+                    <td><%=user_appointment[i].phone%></td>
+
+                    <td><%=user_appointment[i].subject%></td>
+
+                    <td><%=user_appointment[i].message%></td>
+
+
+
+                 </tr>
+                <%
+            }
+            %>
+        </table>
+        </div>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>

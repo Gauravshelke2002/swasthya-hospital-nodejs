@@ -1,0 +1,43 @@
+<%- include("navbar.ejs") %>
+
+ <!-- body start -->
+
+ <div class="container-fluid">
+    <div class="row">
+ <div class="col-12 p-0 facilities_page_banner">
+   <h1 class="ml-5 mt-5">Facilities</h1>
+   <li class="d-inline-block " style="margin-left:50px">Home</li>
+   <li class="d-inline-block ml-3"><i class="fa-solid fa-chevron-right"></i></li>
+   <li class="d-inline-block ml-3">Facilities</li>
+ </div>
+    </div>
+</div>
+
+<section class=" ">
+<div class="container pt-4 pb-4">
+ <div class="row">
+  <%for(i=0;i<facility_img.length;i++)
+              {
+                  %>
+
+       <div class="col-md-4 mt-2 p-4">
+      <div class="card card-body p-0">
+        <img src="/uploads/<%=facility_img[i].image%>" alt=""class="img-fluid w-100"/>
+      </div>
+    </div> 
+    <%
+        
+  }
+  %>
+
+    
+ 
+
+ </div>
+</div>
+</section>
+
+<!-- body end-->
+
+
+<%- include("footer.ejs") %>

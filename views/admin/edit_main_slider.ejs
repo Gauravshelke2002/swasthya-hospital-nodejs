@@ -1,0 +1,28 @@
+<%-include("navbar.ejs")%>
+
+<h1>Edit slider</h1>
+<form
+  action="/admin/update_main_slider/<%=main_slider._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Main Slider</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+        slider Image
+        <input type="file" name="slider_image" class="form-control" />
+      </div>
+      <div class="col-md-4 mt-3">
+        <img src="/uploads/<%=main_slider.slider_image%>" width="200px" height="200px">
+    </div>
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Update Main Slider</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<%-include("footer.ejs")%>

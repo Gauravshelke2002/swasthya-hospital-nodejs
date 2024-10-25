@@ -1,0 +1,85 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/save_obstetricks_part3"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>obstetricks part3</h3>
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        Icon
+        <input type="text" name="icon" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        name
+        <input type="text" name="name" class="form-control" />
+      </div>
+      
+      
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Save obstetricks part3</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<div class="container-fluid mt-5 bg-white">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <h3>obstetricks part3</h3>
+            <table class="table table-bordered table-sm table-striped mt-4">
+            <tr>
+                <th>ACTION</th>
+                <th>SN</th>
+                <TH>Icon</TH>
+                <th>Name</th>
+                
+
+               
+  
+            </tr>
+            <%
+            for(i=0;i<obstetricks_part3.length;i++)
+            {
+                %>
+                 <tr>
+                    <td>
+                        <a href="/admin/edit_obstetricks_part3/<%=obstetricks_part3[i]._id%>">
+                            <button class="btn btn-primary p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </a>
+                        <a href="/admin/delete_obstetricks_part3/<%=obstetricks_part3[i]._id%>" onclick="return confirm('Are You Sure...')">
+                            <button class="btn btn-warning p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%=i+1%></td>
+                    
+                        <td><%=obstetricks_part3[i].icon%></td>
+                        <td><%=obstetricks_part3[i].name%></td>
+                       
+
+
+
+                   
+  
+  
+                 </tr>
+                <%
+            }
+            %>
+        </table>
+        </div>
+    </div>
+  </div>
+  
+
+
+<%-include("footer.ejs")%>

@@ -1,0 +1,94 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/save_home_ambulance"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Home ambulance</h3>
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        H1
+        <input type="text" name="h1" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        H2
+        <input type="text" name="h2" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        H3
+        <input type="text" name="h3" class="form-control" />
+
+      </div>
+      <div class="col-md-12 mt-3">
+        Image
+       <input type="file" name="image" class="form-control" />
+     </div>
+      
+
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Save Home Dep part1</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<div class="container-fluid mt-5 bg-white">
+  <div class="row">
+      <div class="col-md-12 mt-5">
+          <h3>home dep part1</h3>
+          <table class="table table-bordered table-sm table-striped mt-4">
+          <tr>
+              <th>ACTION</th>
+              <th>SN</th>
+              <TH> h1</TH>
+              <th>h2</th>
+              <th>h3</th>
+              <th>Image</th>
+             
+
+          </tr>
+          <%
+          for(i=0;i<home_ambulance.length;i++)
+          {
+              %>
+               <tr>
+                  <td>
+                      <a href="/admin/edit_home_ambulance/<%=home_ambulance[i]._id%>">
+                          <button class="btn btn-primary p-0 pe-2 ps-2 mt-3">
+                              <i class="fa fa-pencil"></i>
+                          </button>
+                      </a>
+                      <a href="/admin/delete_home_ambulance/<%=home_ambulance[i]._id%>" onclick="return confirm('Are You Sure...')">
+                          <button class="btn btn-warning p-0 pe-2 ps-2 mt-3">
+                              <i class="fa fa-trash"></i>
+                          </button>
+                      </a>
+                  </td>
+                  <td><%=i+1%></td>
+                  
+                  <td><%=home_ambulance[i].h1%></td>
+                  <td><%=home_ambulance[i].h2%></td>
+                  <td><%=home_ambulance[i].h3%></td>
+                  <td>
+                    <img src="/uploads/<%=home_ambulance[i].image%>" width="150px" height="100px" >
+                   
+                  </td>
+
+                 
+
+
+               </tr>
+              <%
+          }
+          %>
+      </table>
+      </div>
+  </div>
+</div>
+
+<%-include("footer.ejs")%>

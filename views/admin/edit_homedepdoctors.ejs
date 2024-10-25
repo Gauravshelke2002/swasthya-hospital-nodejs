@@ -1,0 +1,42 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_homedep_doctors/<%=homedep_doctors._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit Home dep doctors</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+         Image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-4 mt-3">
+        <img src="/uploads/<%=homedep_doctors.image%>" width="150px" height="200px">
+    </div>
+      <div class="col-md-12 mt-3">
+        Name
+        <input type="text" name="name" value="<%=homedep_doctors.name%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Position
+        <input type="text" name="position" value="<%=homedep_doctors.position%>"  class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Education
+        <input type="text" name="education" value="<%=homedep_doctors.education%>"  class="form-control" />
+
+      </div>
+      
+
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Update Home Dep part1</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<%-include("footer.ejs")%>

@@ -1,0 +1,114 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/save_cardiology_main"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>cardiology main</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+         Image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Title1
+        <input type="text" name="title1" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Title2
+        <input type="text" name="title2" class="form-control" />
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        Para1
+        <textarea name="para1" class="form-control"></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        Para2
+        <textarea name="para2" class="form-control"></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        Para3
+        <textarea name="para3" class="form-control"></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        Para4
+        <textarea name="para4" class="form-control"></textarea>
+      </div>
+
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Save cardiology main</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<div class="container-fluid mt-5 bg-white">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <h3>Cardiology main</h3>
+            <table class="table table-bordered table-sm table-striped mt-4">
+            <tr>
+                <th>ACTION</th>
+                <th>SN</th>
+                <TH> Image</TH>
+                <th>Title1</th>
+                <th>Title2</th>
+                <th>para1</th>
+                <th>para2</th>
+                <th>para3</th>
+                <th>para4</th>
+
+               
+  
+            </tr>
+            <%
+            for(i=0;i<cardiology_main.length;i++)
+            {
+                %>
+                 <tr>
+                    <td>
+                        <a href="/admin/edit_cardiology_main/<%=cardiology_main[i]._id%>">
+                            <button class="btn btn-primary p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </a>
+                        <a href="/admin/delete_cardiology_main/<%=cardiology_main[i]._id%>" onclick="return confirm('Are You Sure...')">
+                            <button class="btn btn-warning p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%=i+1%></td>
+                    <td>
+                        <img src="/uploads/<%=cardiology_main[i].image%>" width="300px" height="100px" >
+                       
+                        </td>
+                        <td><%=cardiology_main[i].title1%></td>
+                        <td><%=cardiology_main[i].title2%></td>
+                        <td><%=cardiology_main[i].para1%></td>
+                        <td><%=cardiology_main[i].para2%></td>
+                        <td><%=cardiology_main[i].para3%></td>
+                        <td><%=cardiology_main[i].para4%></td>
+
+
+
+                   
+  
+  
+                 </tr>
+                <%
+            }
+            %>
+        </table>
+        </div>
+    </div>
+  </div>
+  
+
+
+<%-include("footer.ejs")%>

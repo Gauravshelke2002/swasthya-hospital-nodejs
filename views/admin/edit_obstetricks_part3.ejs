@@ -1,0 +1,33 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_obstetricks_part3/<%=data._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit obstetricks part3</h3>
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        Icon
+        <input type="text" name="icon" value="<%=data.icon%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        name
+        <input type="text" name="name"value="<%=data.name%>"  class="form-control" />
+      </div>
+      
+      
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Update obstetricks part3</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+
+
+<%-include("footer.ejs")%>

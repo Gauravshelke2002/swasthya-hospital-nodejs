@@ -1,0 +1,44 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_home_testimonial/<%=data._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit home testimonial</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+        Image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+      <img src="/uploads/<%=data.image%>" width="100px" height="90px">
+      </div>
+      <div class="col-md-12 mt-3">
+        heading
+        <textarea name="heading" class="form-control"><%=data.heading%></textarea>
+
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        name
+        <input type="text" name="name" value="<%=data.name%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        position
+        <input type="text" name="position"value="<%=data.posin%>"  class="form-control" />
+      </div>
+      
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">update home testimonial</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+
+
+<%-include("footer.ejs")%>

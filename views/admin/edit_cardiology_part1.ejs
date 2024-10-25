@@ -1,0 +1,40 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_cardiology_part1/<%=data._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit cardiology part1</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+        name1
+        <textarea name="name1" class="form-control"><%=data.name1%></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        name2
+        <textarea name="name2" class="form-control"><%=data.name2%></textarea>
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        Icon
+        <input type="text" name="icon" value="<%=data.icon%>" class="form-control" />
+      </div>
+      
+      
+      
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">update cardiology part1</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+
+  
+
+
+<%-include("footer.ejs")%>

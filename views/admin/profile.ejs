@@ -1,0 +1,36 @@
+<%- include("navbar.ejs") %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 text-center "> </div> 
+        <div class="col-md-7 text-center "> 
+            <div class="card card-body w-50 mt-5  card-rounded" style="border-radius: 40px; padding: 20px; ">
+                <h5 class="font-weight-bold text-danger fst-italic">Admin Profile page.</h5>
+                <table>
+                    <tr>
+                        <td><i class="fa fa-user text-info" aria-hidden="true"></i> </td>
+                        <td><h5 class=" text-dark fst-italic"  style="text-align: justify;"><%=admin_info.mobile%></h5></td>
+                    </tr>
+                
+                </table> 
+                <div class=" btn-group d-flex justify-content-center">
+                    
+                
+                <a href=""><button class="btn btn-primary mt-3 mr-2">Edit</button></a>
+             
+                <a href="/logout" > <button class="btn btn-primary mt-3 ">logout</button></a>
+
+
+            </div>
+            
+            </div>
+        </div> 
+
+          
+    </div>
+</div>
+
+   
+  
+<br><br><br><br><br><br>
+
+<%- include("footer.ejs") %>

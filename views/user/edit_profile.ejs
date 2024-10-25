@@ -1,0 +1,29 @@
+<%-include("navbar.ejs")%>
+
+<form action="/update_profile/<%=data._id%>" method="post">
+  <div class="container-fluid mt-3 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5  bg-white shadow p-5">
+        <center><h3 >Update Profile</h3></center>
+        <br>
+        Enter User Name
+        <input type="text" class="form-control" value="<%=data.user_name%>" name="user_name" />
+        <br>
+        Enter Mobile No
+        <input type="number" class="form-control"value="<%=data.mobile_number%>"  name="mobile_number" />
+        <br>
+        Enter Email Id.
+        <input type="email" class="form-control"value="<%=data.email_id%>"  name="email_id" />
+        <br>
+        Enter Password
+        <input type="password" class="form-control"value="<%=data.password%>"  name="password" />
+        <br>
+       <center><button class="btn btn-primary mb-2">Update Profile</button></center> 
+        <br>
+        
+      </div>
+    </div>
+  </div>
+</form>
+
+<%-include("footer.ejs")%>

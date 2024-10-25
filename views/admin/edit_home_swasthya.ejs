@@ -1,0 +1,46 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_home_swasthya/<%=home_swasthya._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit Home swasthya</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+         Image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-4 mt-3">
+        <img src="/uploads/<%=home_swasthya.image%>" width="200px" height="200px">
+    </div>
+      <div class="col-md-12 mt-3">
+        Title
+        <input type="text" name="title" value="<%=home_swasthya.title%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        heading
+        <input type="text" name="heading" value="<%=home_swasthya.heading%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Para1
+        <textarea name="para1" class="form-control"><%=home_swasthya.para1%></textarea>
+
+      </div>
+      <div class="col-md-12 mt-3">
+        Para2
+        <textarea name="para2" class="form-control"><%=home_swasthya.para2%></textarea>
+
+      </div>
+
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Update Home Swasthya</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<%-include("footer.ejs")%>

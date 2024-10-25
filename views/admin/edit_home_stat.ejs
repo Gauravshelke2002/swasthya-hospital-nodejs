@@ -1,0 +1,30 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_home_stat/<%=data._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit home stat</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+        N1
+        <input type="number" name="n1" value="<%=data.n1%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        title
+        <input type="text" name="title" value="<%=data.title%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">update home stat</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+
+
+<%-include("footer.ejs")%>

@@ -1,0 +1,102 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/save_home_swasthya"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Home swasthya</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+         Image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Title
+        <input type="text" name="title" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        heading
+        <input type="text" name="heading" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Para1
+        <textarea name="para1" class="form-control"></textarea>
+
+      </div>
+      <div class="col-md-12 mt-3">
+        Para2
+        <textarea name="para2" class="form-control"></textarea>
+
+      </div>
+
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Save Home Swasthya</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<div class="container-fluid mt-5 bg-white">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <h3>Slider Image</h3>
+            <table class="table table-bordered table-sm table-striped mt-4">
+            <tr>
+                <th>ACTION</th>
+                <th>SN</th>
+                <TH> Image</TH>
+                <th>Title</th>
+                <th>heading</th>
+                <th>para1</th>
+                <th>para2</th>
+               
+  
+            </tr>
+            <%
+            for(i=0;i<home_swasthya.length;i++)
+            {
+                %>
+                 <tr>
+                    <td>
+                        <a href="/admin/edit_home_swasthya/<%=home_swasthya[i]._id%>">
+                            <button class="btn btn-primary p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </a>
+                        <a href="/admin/delete_home_swasthya/<%=home_swasthya[i]._id%>" onclick="return confirm('Are You Sure...')">
+                            <button class="btn btn-warning p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%=i+1%></td>
+                    <td>
+                        <img src="/uploads/<%=home_swasthya[i].image%>" width="300px" height="100px" >
+                       
+                        </td>
+                        <td><%=home_swasthya[i].image%></td>
+                        <td><%=home_swasthya[i].title%></td>
+                        <td><%=home_swasthya[i].heading%></td>
+                        <td><%=home_swasthya[i].para1%></td>
+                        <td><%=home_swasthya[i].para2%></td>
+
+
+                   
+  
+  
+                 </tr>
+                <%
+            }
+            %>
+        </table>
+        </div>
+    </div>
+  </div>
+  
+
+
+<%-include("footer.ejs")%>

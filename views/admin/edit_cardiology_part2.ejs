@@ -1,0 +1,43 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_cardiology_part2/<%=data._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit cardiology part2</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+        image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+      <img src="/uploads/<%=data.image%>" width="100px" height="90px">
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        name
+        <textarea name="name" class="form-control"><%=data.name%></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        number
+        <input type="number" name="no" value="<%=data.number%>" class="form-control" />
+      </div>
+      
+      
+      
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Update cardiology part2</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+
+  
+
+
+<%-include("footer.ejs")%>

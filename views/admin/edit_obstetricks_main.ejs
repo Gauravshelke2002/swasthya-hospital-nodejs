@@ -1,0 +1,47 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/update_obstetricks_main/<%=data._id%>"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Edit obstetricks main</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+         Image
+        <input type="file" name="image" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+       <img src="/uploads/<%=data.image%>" width="100px" height="90px">
+     </div>
+      <div class="col-md-12 mt-3">
+        Title1
+        <input type="text" name="title1"value="<%=data.title1%>" class="form-control" />
+      </div>
+      <div class="col-md-12 mt-3">
+        Title2
+        <input type="text" name="title2" value="<%=data.title2%>" class="form-control" />
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        Para1
+        <textarea name="para1" class="form-control"><%=data.para1%></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        Para2
+        <textarea name="para2" class="form-control"><%=data.para2%></textarea>
+      </div>
+        <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Update obstetricks main</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+  
+
+
+<%-include("footer.ejs")%>

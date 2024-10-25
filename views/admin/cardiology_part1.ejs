@@ -1,0 +1,92 @@
+<%-include("navbar.ejs")%>
+
+<form
+  action="/admin/save_cardiology_part1"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="container p-4 bg-white">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>cardiology part1</h3>
+      </div>
+      <div class="col-md-12 mt-3">
+        name1
+        <textarea name="name1" class="form-control"></textarea>
+      </div>
+      <div class="col-md-12 mt-3">
+        name2
+        <textarea name="name2" class="form-control"></textarea>
+      </div>
+      
+      <div class="col-md-12 mt-3">
+        Icon
+        <input type="text" name="icon" class="form-control" />
+      </div>
+      
+      
+      
+      <div class="col-md-12 mt-3 text-center">
+        <button class="btn btn-primary">Save cardiology part1</button>
+     </div>
+    </div>
+  </div>
+</form>
+
+<div class="container-fluid mt-5 bg-white">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <h3>Cardiology part1</h3>
+            <table class="table table-bordered table-sm table-striped mt-4">
+            <tr>
+                <th>ACTION</th>
+                <th>SN</th>
+                <TH>Icon</TH>
+                <th>Name</th>
+                
+
+               
+  
+            </tr>
+            <%
+            for(i=0;i<cardiology_part1.length;i++)
+            {
+                %>
+                 <tr>
+                    <td>
+                        <a href="/admin/edit_cardiology_part1/<%=cardiology_part1[i]._id%>">
+                            <button class="btn btn-primary p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </a>
+                        <a href="/admin/delete_cardiology_part1/<%=cardiology_part1[i]._id%>" onclick="return confirm('Are You Sure...')">
+                            <button class="btn btn-warning p-0 pe-2 ps-2 mt-3">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%=i+1%></td>
+                    <td><%=cardiology_part1[i].name1%></td>
+                    <td><%=cardiology_part1[i].name2%></td>
+
+
+                        <td><%=cardiology_part1[i].icon%></td>
+                       
+
+
+
+                   
+  
+  
+                 </tr>
+                <%
+            }
+            %>
+        </table>
+        </div>
+    </div>
+  </div>
+  
+
+
+<%-include("footer.ejs")%>
